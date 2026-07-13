@@ -1,0 +1,2 @@
+class Solution:
+    maxSubArray= lambda self,nums:max(accumulate(nums ,lambda a,b:max(a+b,b)))
