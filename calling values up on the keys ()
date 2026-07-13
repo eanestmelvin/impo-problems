@@ -1,0 +1,9 @@
+class Solution:
+    def arrayRankTransform(self, arr: List[int]) -> List[int]:
+        a=sorted(set(arr))
+        d={}
+        j=0
+        for i in a:
+            d[i]=j=j+1
+        return [d[i] for i in arr]
+#the importent phoint is hoe to call values() up on the keys () in dict
