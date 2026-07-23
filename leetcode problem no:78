@@ -1,0 +1,5 @@
+class Solution:
+    subsets = lambda self, nums: [
+        [nums[i] for i in range(len(nums)) if (cases >> i) & 1]
+        for cases in range(2 ** len(nums))
+    ]
