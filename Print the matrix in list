@@ -1,0 +1,26 @@
+b=[[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]]
+top=0
+bottom=len(b)
+left=0
+right=len(b[0])
+l=[]
+while True:
+    if right<=left:
+        break
+    for i in range(left,right):
+        a=b[top][i]
+        l.append(a)
+    top+=1
+    for i in range(top,bottom):
+        a=b[i][right-1]
+        l.append(a)
+    right-=1
+    for i in range(right-1,left-1,-1):
+        a=b[bottom-1][i]
+        l.append(a)
+    bottom-=1
+    for i in range(bottom,top,-1):
+        a=b[i-1][left]
+        l.append(a)
+    left+=1
+print(l)
