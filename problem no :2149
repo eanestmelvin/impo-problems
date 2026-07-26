@@ -1,0 +1,14 @@
+class Solution:
+    def rearrangeArray(self, nums: List[int]) -> List[int]:
+        p=[]
+        n=[]
+        a=[]
+        for i in nums:
+            if i>0:
+                p.append(i)
+            else:
+                n.append(i)
+        a=[0]*len(nums)
+        a[0::2]=p
+        a[1::2]=n
+        return a
