@@ -1,0 +1,13 @@
+class Solution:
+    def predictTheWinner(self, nums: List[int]) -> bool:
+        mem={}
+        def dd(L,R):
+            if (L,R) in mem:
+                return mem[(L,R)]
+            if L==R:
+                return nums[L]
+            left=nums[L]-dd(L+1,R)
+            right=nums[R]-dd(L,R-1)
+            mem[(L,R)]=max(left,right)
+            return mem[(L,R)]
+        return dd(0,len(nums)-1)>=0
